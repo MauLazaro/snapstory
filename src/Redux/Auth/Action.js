@@ -2,7 +2,7 @@ import { SIGN_IN, SIGN_UP } from "./ActionType";
 
 export const signinAction = (data) => async (dispatch) => {
     try {
-        const res = await fetch("http://localhost:8080/signing",{
+        const res = await fetch("https://snapstory-backend-production.up.railway.app/signing",{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -19,7 +19,7 @@ export const signinAction = (data) => async (dispatch) => {
 
 export const signupAction = (data) => async (dispatch) => {
     try {
-        const res = await fetch("http://localhost:8080/signup",{
+        const res = await fetch("https://snapstory-backend-production.up.railway.app/signup",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

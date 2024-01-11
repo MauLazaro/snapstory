@@ -1,6 +1,6 @@
 import { FOLLOW_USER, GET_USERS_BY_USER_IDS, GET_USER_BY_USERNAME, POPULAR_USER, REQ_USER, SEARCH_USER, UNFOLLOW_USER, UPDATE_USER } from "./ActionType";
 
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://snapstory-backend-production.up.railway.app/api";
 
 export const getUserProfileAction = (jwt) => async (dispatch) => {
     try {

@@ -1,6 +1,6 @@
 import { ALL_POST, CREATE_NEW_POST, DELETE_POST, GET_SINGLE_POST, GET_USER_POST, LIKE_POST, REQ_USER_POST, SAVE_POST, UNLIKE_POST, UNSAVE_POST } from "./ActionType";
 
-const BASE_URL = "http://localhost:8080/api";
+const BASE_URL = "https://snapstory-backend-production.up.railway.app/api";
 
 export const createPostAction = (data) => async (dispatch) => {
     try {
