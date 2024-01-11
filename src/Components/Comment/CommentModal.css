@@ -1,0 +1,18 @@
+.comment{
+    max-height: 45vh;
+    overflow-y: scroll; /*Chromium*/
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.comment::-webkit-scrollbar{
+    display: none;
+}
+
+.commentInput{
+    border: none;
+    outline: none;
+    padding: 5px;
+    padding-left: 1rem;
+}
+
