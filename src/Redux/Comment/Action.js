@@ -1,6 +1,6 @@
 import { CREATE_COMMENT, GET_POST_COMMENT, LIKE_COMMENT, UNLIKE_COMMENT } from "./ActionType";
 
-const BASE_URL = "https://snapstory-backend-production.up.railway.app/api";
+const BASE_URL = "http://localhost:8080/api";
 
 export const createCommentAction = (data) => async (dispatch) => {
     try {

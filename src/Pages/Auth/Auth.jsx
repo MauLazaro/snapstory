@@ -11,11 +11,11 @@ const Auth = () => {
         <div className='flex items-center justify-center h-[100vh]'>
             <div className='relative hidden lg:block'>
                 <div className='h-[35.3rem] w-[30rem]'>
-                    <img className='h-full w-full' src="../../../src/assets/login-image.png" alt="phone-handler" />
+                    <img className='h-full w-full' src='https://i.ibb.co/7y43jzK/login-image.png' alt='phone-handler' />
                 </div>
             </div>
             <div className='w-[40vw] lg:w-[35vw]'>
-                {location.pathname==="/login" ? <Signin/> : <Signup />}
+                {location.pathname==='/login' ? <Signin/> : <Signup />}
             </div>
         </div>
     </div>

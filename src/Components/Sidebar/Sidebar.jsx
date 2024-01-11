@@ -16,16 +16,16 @@ const Sidebar = () => {
 
     const handleTabClick=(title) =>{
         setActiveTab(title)
-        if (title==="Profile") {
+        if (title==='Profile') {
             setIsSearchVisible(false); 
             navigate(`/${user.reqUser?.username}`);
-        } else if (title==="Home") {
+        } else if (title==='Home') {
             setIsSearchVisible(false);  
-            navigate("/");
-        } else if (title==="Create") {
+            navigate('/');
+        } else if (title==='Create') {
             setIsSearchVisible(false);  
             onOpen();
-        }  else if (title==="Search") {
+        }  else if (title==='Search') {
             setIsSearchVisible(true);
         } else {
             setIsSearchVisible(false); 
@@ -34,17 +34,17 @@ const Sidebar = () => {
     
     return (
         <div className='sticky top-0 h-[100vh] flex'>
-            <div className={`flex flex-col justify-between h-full ${activeTab==="Search"?"px-2":"px-10"}`}>
+            <div className={`flex flex-col justify-between h-full ${activeTab==='Search'?'px-2':'px-10'}`}>
                 {<div>
-                    {activeTab !== "Search" && <div className='pt-10'>
-                        <img className='w-40' src="../../../src/assets/logo-letters.png" alt="Logo" />
+                    {activeTab !== 'Search' && <div className='pt-10'>
+                        <img className='w-40' src='https://i.ibb.co/ynBN6pT/logo-letters.png' alt='Logo' />
                     </div>}
 
                     <div className='mt-10'>
                         {menu.map((item) => (
                             <div onClick={()=>handleTabClick(item.title)} className='flex items-center mb-5 cursor-pointer text-lg'>
                                 {activeTab === item.title ? item.iactiveIcon : item.icon}
-                                {activeTab !== "Search" && <p className={`${activeTab === item.title ? "font-bold" : "font-medium"} `}>{item.title}</p>}
+                                {activeTab !== 'Search' && <p className={`${activeTab === item.title ? 'font-bold' : 'font-medium'} `}>{item.title}</p>}
                             </div>
                         ))}
                     </div>
@@ -52,7 +52,7 @@ const Sidebar = () => {
 
                 <div className='flex items-center cursor-pointer pb-10'>
                     <IoReorderFour className='text-2x1' />
-                    {activeTab !== "Search" && <p className='ml-5'>More</p>}
+                    {activeTab !== 'Search' && <p className='ml-5'>More</p>}
                 </div>
             </div>
 
