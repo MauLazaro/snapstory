@@ -4,25 +4,30 @@ import PostCard from '../../Components/Post/PostCard'
 import { useDispatch, useSelector } from 'react-redux'
 import { findAllPostAction, findUserPostAction } from '../../Redux/Post/Action'
 import { findUserByUserIdsAction, getUserProfileAction } from '../../Redux/User/Action'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [userIds, setUserIds] = useState([]);
-  const {user, post} = useSelector((store) => store)
+  const {user, post} = useSelector((store) => store);
+  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const newIds = user.reqUser?.following?.map((user) => user.id);
     if (newIds?.length > 0) {
       setUserIds([user.reqUser?.id, ...newIds]);
     }
-    else setUserIds([user.reqUser?.id]);
+    else {
+      setUserIds([user.reqUser?.id]);
+      navigate('/login');
+    }
   }, [user.reqUser]);  
 
   useEffect(() => {
     const data = {
       jwt:token,
-      userIds:[userIds].join(","),
+      userIds:[userIds].join(','),
     };
     dispatch(findAllPostAction(token));
     dispatch(findUserPostAction(data));
